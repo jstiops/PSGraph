@@ -64,7 +64,7 @@ function New-PSGraphChart {
       [Parameter(Mandatory=$false)][string]$Type="Line"
     )
       #$chart = Get-Variable -Name "$ChartName" -ValueOnly
-      $this.Series.Add($SerieName)
+      $this.Series.Add($SerieName)|out-null
       $this.Series[$SerieName].ChartType = $Type
       $this.Series[$SerieName].IsVisibleInLegend = $true
       $this.Series[$SerieName].BorderWidth  = 3
